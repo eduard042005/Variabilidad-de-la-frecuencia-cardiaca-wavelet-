@@ -1,6 +1,5 @@
 # INFORME 5
 ## Variabilidad de la Frecuencia Cardiaca usando la Transformada Wavelet 
-![image](https://github.com/user-attachments/assets/a400a889-006e-4346-91fb-de1d16a94f33)
 
 En este informe de laboratorio se plantea como objetivo analizar la variabilidad de la frecuencia cardíaca (HRV) utilizando la transformada wavelet para identificar cambios en las frecuencias características y analizar la dinámica de esta.
 
