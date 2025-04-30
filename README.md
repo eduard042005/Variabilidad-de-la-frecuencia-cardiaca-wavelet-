@@ -184,7 +184,9 @@ print("Salida[n] =", " + ".join([f"{b[i]:.4f}*x[n-{i}]" for i in range(len(b))])
 ```
 Muestra cómo se ve la ecuación del filtro en forma discreta. siendo esta:
 
-IMAGEN DE LA ECUACION JEDJEWFWEFÑWFERJÑF
+
+![image](https://github.com/user-attachments/assets/8224cc3a-85d8-43df-80a6-e2a9293611ff)
+
 
 ##### Aplicación del filtro
 ```
