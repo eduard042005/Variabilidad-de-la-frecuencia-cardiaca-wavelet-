@@ -3,7 +3,7 @@
 
 En este informe de laboratorio se plantea como objetivo analizar la variabilidad de la frecuencia cardíaca (HRV) utilizando la transformada wavelet para identificar cambios en las frecuencias características y analizar la dinámica de esta.
 
-El laboratorio se realizó tomando a un paciente en el cual se le realizara un electrocardiograma (ECG), la señal cardiaca seria procesada por un sensor ECG y esta señal será adquirida a través de una blu phil (microcontrolador), sirviendo como un sistema de adquisición de datos.
+El laboratorio se realizó tomando a un paciente en el cual se le realizaria un electrocardiograma (ECG), la señal cardiaca seria procesada por un sensor ECG y esta señal será adquirida a través de una blu phil (microcontrolador), sirviendo como un sistema de adquisición de datos.
 En esta toma de datos el paciente se verá sometido a tres tipos de actividades distintas, la primera es estar una actividad de estrés o activiad fisica esto con el fin de activar el sistema simpático, aumentando la frecuencia. A continuación, se dispondría a el paciente en un estado de “normalidad” escuchando el ambiente y hablando con personas. Y por último en reposo, con la intención que el sistema parasimpático del cuerpo humano, bajara la frecuencia cardiaca. Esta medicion se dispondra de 5 minutos para cada tipo de actividad.
 Todo esto con el fin de poder saber cómo estímulos externos activan los sistemas (simpático y parasimpático) y gracias a esta activación como afecta directamente a la variabilidad de la frecuencia cardiaca (HRV).
 La HRV (Heart Rate Variability) o  en español la variabilidad de la frecuencia cardiaca, es la medida de las fluctuaciones en el tiempo entre latidos sucesivos, específicamente entre los picos R del complejo QRS en un electrocardiograma (intervalo R–R). Cuanto más variable es ese intervalo, más flexible y adaptativo es el sistema nervioso autónomo.
@@ -19,7 +19,7 @@ Las frecuencias que se deben tener en cuenta deben ser las siguientes (con trans
 ## Codigo de adquisicion de datos (matlab)
 Antes de procesar la señal, se tuvo que adquirir dicha señal ECG, por lo tanto, se utilizo el siguiente codigo para la adquisicion de los datos del ECG:
 
-#####limpieza del entorno y consola
+##### limpieza del entorno y consola
 en esta parte inicial limpiaremos la consola `clc`, borrar variables `clear all` y cierra ventanas`close all`.
 ```
 clc; clear all; close all;
