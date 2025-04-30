@@ -1,5 +1,5 @@
 # INFORME 5
-##Variabilidad de la Frecuencia Cardiaca usando la Transformada Wavelet 
+## Variabilidad de la Frecuencia Cardiaca usando la Transformada Wavelet 
 
 En este informe de laboratorio se plantea como objetivo analizar la variabilidad de la frecuencia cardíaca (HRV) utilizando la transformada wavelet para identificar cambios en las frecuencias características y analizar la dinámica de esta.
 
@@ -16,15 +16,15 @@ Las frecuencias que se deben tener en cuenta deben ser las siguientes (con trans
 
  En los resultados esperamos que la HRV se vea satisfactoriamente los tres momentos de estudio el paciente en reposo, el paciente en estado normal y en paciente en una situación de estrés.
 
-##Codigo de adquisicion de datos (matlab)
+## Codigo de adquisicion de datos (matlab)
 Antes de procesar la señal, se tuvo que adquirir dicha señal ECG, por lo tanto, se utilizo el siguiente codigo para la adquisicion de los datos del ECG:
 
-#####limpieza del entorno y consola
+##### limpieza del entorno y consola
 en esta parte inicial limpiaremos la consola `clc`, borrar variables `clear all` y cierra ventanas`close all`.
 ```
 clc; clear all; close all;
 ```
-#####Cerrar puertos seriales abiertos anteriormente (si hay)
+##### Cerrar puertos seriales abiertos anteriormente (si hay)
 ```
  if ~isempty(serialportlist)
         for p = serialportlist
@@ -37,7 +37,7 @@ clc; clear all; close all;
     end
 ```
 Esto lo que hace es revisa si hay puertos abiertos y trata de cerrarlos para evitar conflictos al abrir uno nuevo. Ya que estos datos se estan capturando en tiempo real.
-#####Configuracion de puerto serial
+##### Configuracion de puerto serial
 ```
 puerto    = 'COM5';
     baudios   = 115200;        
@@ -51,7 +51,7 @@ Creacion de objeto serial a travez de `serialport(puerto, baudios);`.
 Tiempo maximo de espera en segundos `sp.Timeout`
 Limpia datos previos del buffer `flush(sp);`
 
-#####Creacion de archivo para guardar los datos
+##### Creacion de archivo para guardar los datos
 ```
  fname = 'PRUEBBA.txt';
     fid   = fopen(fname, 'w');  
@@ -63,7 +63,7 @@ Es el nombre del archivo que se generara `fname `.
 Esta funcion nos permite abrir el archivo en modo escritura ` fid   = fopen(fname, 'w');`.
 Si falla, lanza un error gracias al if.
 
-#####Parametros de adquisicion y grafica
+##### Parametros de adquisicion y grafica
  ```
  T_total    = 300;
     tStart     = tic;
@@ -73,7 +73,7 @@ Si falla, lanza un error gracias al if.
 Duración de captura: 300 segundos (5 minutos).
 Se usan cronómetros `(tic)` para medir tiempo de adquisición y para refrescar la gráfica cada 0.1 s.
 
-#####Buffers para almacenar muestras en memoria y graficarlas
+##### Buffers para almacenar muestras en memoria y graficarlas
 ```
   bufSize    = 500;
     ventanaMM  = 5;
@@ -83,7 +83,7 @@ Se usan cronómetros `(tic)` para medir tiempo de adquisición y para refrescar 
  `bufSize` Es el tamaño del buffer de muestra.
  El tamaño de la ventana de media movil se da por `ventanaMM `.
 La linea de codigo 2 es el buffer de datos crudos y la linea 4 es el buffer de datos filtrados
-#####Preparacion de ventana de la grafica(figura)
+##### Preparacion de ventana de la grafica(figura)
 ```
     hFig = figure('Name','ECG 5 min','NumberTitle','off');
     hRaw  = plot(datos,'b','LineWidth',1); hold on;
@@ -93,7 +93,7 @@ La linea de codigo 2 es el buffer de datos crudos y la linea 4 es el buffer de d
     hTitle = title('0 / 300 s','FontSize',12);
 ```
 La funcion `figure()` nos permite crear la ventana, en esta ventana se mostrara la señal filtrada (en rojo) `   hFilt` y no filtrada (en azul) ` hRaw`.
-#####Bucle principal de adquisicion 
+##### Bucle principal de adquisicion 
 ```
 while toc(tStart) < T_total
         nAvail = sp.NumBytesAvailable;
@@ -112,7 +112,7 @@ este bucle correra por 300 segundos es decir 5 minutos. Ademas de, Leer los dato
         end
 ```
 Estas lineas de codigo nos permiten actualizar buffer de datos sin ningun filtrado, ademas de desplazar y agregar nueva muestra, y aplicar media movil.
-#####Actualizar gráfica solo si pasó suficiente tiempo
+##### Actualizar gráfica solo si pasó suficiente tiempo
 ```
 if toc(lastPlot) > plotInterval
             set(hRaw,  'YData', datos);
@@ -126,7 +126,7 @@ if toc(lastPlot) > plotInterval
 ```
 En la linea 1 veremos la actualizacion de la señal sin filtrar y en la linea 2 veremos la actualizacion de la señal filtrada. Refresca la gráfica si ya pasó `plotInterval` (0.1 s).
 
-#####Finalizar: cerrar archivo y liberar puerto
+##### Finalizar: cerrar archivo y liberar puerto
 ```
 fclose(fid);
     clear sp;
