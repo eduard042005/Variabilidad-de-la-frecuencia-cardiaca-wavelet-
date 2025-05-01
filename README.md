@@ -8,6 +8,11 @@ En esta toma de datos el paciente se verá sometido a tres tipos de actividades 
 Todo esto con el fin de poder saber cómo estímulos externos activan los sistemas (simpático y parasimpático) y gracias a esta activación como afecta directamente a la variabilidad de la frecuencia cardiaca (HRV).
 La HRV (Heart Rate Variability) o  en español la variabilidad de la frecuencia cardiaca, es la medida de las fluctuaciones en el tiempo entre latidos sucesivos, específicamente entre los picos R del complejo QRS en un electrocardiograma (intervalo R–R). Cuanto más variable es ese intervalo, más flexible y adaptativo es el sistema nervioso autónomo.
 
+A continuación se vera este paso a paso en un diagrama de flujo explicando brevente que se hace en esta practica:
+
+![Diagrama de flujo](https://github.com/user-attachments/assets/6641a73c-cfdb-49d3-99fb-ca7c38ec1a5f)
+(se anexa el link para una mejor visualizacion: https://miro.com/welcomeonboard/cFJ1Wi8yKy8wOGtzbXZyZnlxeVI3Y2dWK0lIWUYyZUxXS1lrY0NTNmwwRjBFM1NQZ043am5uNEFJcVhWSXgxd1BLdDZOVE5ubXJqUVIwQytqWHo1QVd6RGxGb2tRUnJRdUQyR0RMVHNJL1JkQzliTnlBam1YbDlSY29xTHgrYmRNakdSWkpBejJWRjJhRnhhb1UwcS9BPT0hdjE=?share_link_id=211899885668)
+
 Las frecuencias que se deben tener en cuenta deben ser las siguientes (con transformada de Wavelet):
 - ULF (Ultra Low Frequency) < 0.003 Hz: Cambios de muy largo plazo.
 - VLF (Very Low Frequency) 0.003 – 0.04 Hz Influencia hormonal, regulación de la temperatura corporal.
